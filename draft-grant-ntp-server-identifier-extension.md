@@ -16,7 +16,7 @@ venue:
   type: "Working Group"
   mail: "ntp@ietf.org"
   arch: "https://mailarchive.ietf.org/arch/browse/ntp/"
-  github: signalsforgranted/draft-grant-ntp-server-identifier-extension
+  github: "signalsforgranted/draft-grant-ntp-server-identifier-extension"
 
 author:
  -
