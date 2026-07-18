@@ -55,11 +55,11 @@ of UDP traffic, or the use of anycast IP addresses.
 Many operators resort to various methods to include diagnostic
 information about the network segment, datacentre location or other details
 pertaining to their infrastructure in NTP responses with the NTP reference
-identifier most commonly being used. 
+identifier most commonly being used.
 
 # The Server Identifier Extension Field
 
-The server identifier extension field is a free-form field which comprises of 
+The server identifier extension field is a free-form field which comprises of
 an identifier, length which describes the length of the server identifier field.
 The server idenfier field contains no structure and is assumed to be unicode
 text containing information about the service.
@@ -79,7 +79,7 @@ text containing information about the service.
 
 ## Use of the Server Identifier Extension Field
 
-TODO: Describe how implementations and operators should use the field. 
+TODO: Describe how implementations and operators should use the field.
 
 # Security Considerations
 
