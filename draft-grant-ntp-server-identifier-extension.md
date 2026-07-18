@@ -64,7 +64,7 @@ an identifier, length which describes the length of the server identifier field.
 The server idenfier field contains no structure and is assumed to be unicode
 text containing information about the service.
 
- ~~~aasvg
+~~~
  0                   1                   2                   3
  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
