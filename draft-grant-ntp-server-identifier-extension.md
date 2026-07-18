@@ -59,9 +59,12 @@ identifier most commonly being used.
 
 # The Server Identifier Extension Field
 
-The server identifier extension field is a free-form field which comprises of a 
+The server identifier extension field is a free-form field which comprises of 
+an identifier, length which describes the length of the server identifier field.
+The server idenfier field contains no structure and is assumed to be unicode
+text containing information about the service.
 
-```
+ ~~~aasvg
  0                   1                   2                   3
  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
@@ -71,7 +74,8 @@ The server identifier extension field is a free-form field which comprises of a
 .                   Server Identifier                           .
 .                                                               .
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-```
+~~~
+{: #fig-extension-field-diagram title="Extension Field Structure"}
 
 ## Use of the Server Identifier Extension Field
 
