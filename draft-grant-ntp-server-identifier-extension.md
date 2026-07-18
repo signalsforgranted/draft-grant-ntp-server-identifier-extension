@@ -65,7 +65,7 @@ The server identifier extension field is a free-form field which comprises of a
  0                   1                   2                   3
  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|       Type = [[ TBD ]]        |             Length            |
+|       Type = TBD              |             Length            |
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 .                                                               .
 .                   Server Identifier                           .
@@ -87,7 +87,7 @@ Types registry {{RFC5905}}:
 
 Field Type | Meaning           | Reference
 -----------|-------------------|-----------------
-[[TBD]]    | Server Identifier | [[ this memo ]]
+   TBD     | Server Identifier | this memo
 
 --- back
 
