@@ -19,34 +19,28 @@
 # Change the file extension to match the format (.xml for XML, etc...)
 #
 ###
-title: "TODO - Your title"
-abbrev: "TODO - Abbreviation"
+title: "NTP Server Identifier Extension"
+abbrev: "NTP Server Identifier"
 category: info
 
-docname: draft-todo-yourname-protocol-latest
+docname: draft-grant-ntp-server-identifier-extension-latest
 submissiontype: IETF  # also: "independent", "editorial", "IAB", or "IRTF"
 number:
 date:
 consensus: true
 v: 3
-area: AREA
-workgroup: WG Working Group
-keyword:
- - next generation
- - unicorn
- - AI-native
+area: "Internet"
+workgroup: "Network Time Protocols"
 venue:
-  group: WG
-  type: Working Group
-  mail: WG@example.com
-  arch: https://example.com/WG
-  github: USER/REPO
-  latest: https://example.com/LATEST
+  group: "Network Time Protocols"
+  type: "Working Group"
+  mail: "ntp@ietf.org"
+  arch: "https://mailarchive.ietf.org/arch/browse/ntp/"
+  github: signalsforgranted/draft-grant-ntp-server-identifier-extension
 
 author:
  -
-    fullname: Your Name Here
-    organization: Your Organization Here
+    fullname: Sarah Grant
     email: your.email@example.com
 
 normative:
