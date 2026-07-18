@@ -73,6 +73,9 @@ The server identifier extension field is a free-form field which comprises of a
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 ```
 
+## Use of the Server Identifier Extension Field
+
+TODO: Describe how implementations and operators should use the field. 
 
 # Security Considerations
 
