@@ -5,7 +5,7 @@
 Network Time Protocols                                          S. Grant
 Internet-Draft                                                          
 Intended status: Informational                                D. Venhoek
-Expires: 19 January 2027                                    18 July 2026
+Expires: 20 January 2027                                    19 July 2026
 
 
                     NTP Server Identifier Extension
@@ -49,7 +49,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 19 January 2027.
+   This Internet-Draft will expire on 20 January 2027.
 
 Copyright Notice
 
