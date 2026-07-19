@@ -35,13 +35,13 @@ informative:
 
 --- abstract
 
-This document defines an extension field that permits operators of NTP services the ability to provide additional information about their services to clients.
+This document defines an extension field that allows operators of NTP services the ability to provide additional information about their services to clients which request it.
 
 --- middle
 
 # Introduction
 
-Operators of NTP services may choose to have system architectures which lead. This is particularly notable in the case of deployments which use load balancing of UDP traffic, or the use of anycast IP addresses.
+Operators of NTP services may choose to have system architectures which lead. This is particularly notable in the case of deployments which use load balancing of UDP traffic, or the use of anycast IP addresses. This information can be useful in identifying infrastructure, providing ongoing monitoring and assist in triaging faults or issues with services.
 
 # Conventions and Definitions
 
@@ -49,11 +49,11 @@ Operators of NTP services may choose to have system architectures which lead. Th
 
 # Current Deployments
 
-Many operators resort to various methods to include diagnostic information about the network segment, datacentre location or other details pertaining to their infrastructure in NTP responses with the NTP reference identifier most commonly being used.
+Many operators use various methods to include diagnostic information about the network segment, datacentre location, region, or other details pertaining to their infrastructure in NTP responses with the NTP reference identifier most commonly being used.
 
 # The Server Identifier Extension Field
 
-The server identifier extension field is a free-form field which comprises of an identifier, length which describes the length of the server identifier field. The server idenfier field contains no structure and is assumed to be unicode text containing information about the service.
+The Server Identifier field contains the following structure:
 
 ~~~
  0                   1                   2                   3
@@ -68,13 +68,25 @@ The server identifier extension field is a free-form field which comprises of an
 ~~~
 {: #fig-extension-field-diagram title="Extension Field Structure"}
 
+Field Type:
+
+: The type which identifies the Server Identifier extension field. For this draft, this value should be set to **0xf101**.
+
+Length:
+
+: Length of the Server Identifier field. In requests this field MUST be zero, in responses it should be the true length of the server identifier field.
+
+Server Identifier:
+
+: A Unicode string containing information about the server. In requests, this field MUST be empty. In responses padding is not required.
+
 ## Use of the Server Identifier Extension Field
 
 TODO: Describe how implementations and operators should use the field.
 
 # Security Considerations
 
-Operators should remember that NTP packets are not confidential, and that revealing this information to clients may expose sensitive details about their network, services and their configuration.
+Operators should remember that NTP packets are not confidential, and that revealing this information to clients may expose sensitive details about their network, services and their configuration. Deployments not wishing to expose this data to clients should be configured to filter or ignore this extension.
 
 # IANA Considerations
 
