@@ -74,7 +74,7 @@ Field Type:
 
 Length:
 
-: Length of the Server Identifier field. In requests this field MUST be zero, in responses it should be the true length of the server identifier field.
+: Length of the Server Identifier field. In requests its value MUST be zero, in responses it should be the true length of the server identifier field.
 
 Server Identifier:
 
@@ -86,7 +86,7 @@ TODO: Describe how implementations and operators should use the field.
 
 # Security Considerations
 
-Operators should remember that NTP packets are not confidential, and that revealing this information to clients may expose sensitive details about their network, services and their configuration. Deployments not wishing to expose this data to clients should be configured to filter or ignore this extension.
+Operators should note that NTP packets are not confidential and that revealing this information to clients may expose sensitive details about their network, services, or their configuration. Deployments not wishing to expose this data to clients should be configured to filter or ignore this extension on non-monitoring interfaces.
 
 # IANA Considerations
 
@@ -101,5 +101,4 @@ Field Type | Meaning           | Reference
 # Acknowledgments
 {:numbered="false"}
 
-The authors would like to acknowledge Marco Davids and the NTP working group
-mailing list for inspiration for this document.
+The authors would like to acknowledge Marco Davids, Miroslav Lichvar, and Ruben Nijveld for providing thoughtful discussion and inspiration for this document.
