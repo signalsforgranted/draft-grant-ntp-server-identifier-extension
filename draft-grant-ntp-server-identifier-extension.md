@@ -35,16 +35,13 @@ informative:
 
 --- abstract
 
-This document defines an extension field that permits operators of NTP services
-the ability to provide additional information about their services to clients.
+This document defines an extension field that permits operators of NTP services the ability to provide additional information about their services to clients.
 
 --- middle
 
 # Introduction
 
-Operators of NTP services may choose to have system architectures which lead.
-This is particularly notable in the case of deployments which use load balancing
-of UDP traffic, or the use of anycast IP addresses.
+Operators of NTP services may choose to have system architectures which lead. This is particularly notable in the case of deployments which use load balancing of UDP traffic, or the use of anycast IP addresses.
 
 # Conventions and Definitions
 
@@ -52,17 +49,11 @@ of UDP traffic, or the use of anycast IP addresses.
 
 # Current Deployments
 
-Many operators resort to various methods to include diagnostic
-information about the network segment, datacentre location or other details
-pertaining to their infrastructure in NTP responses with the NTP reference
-identifier most commonly being used.
+Many operators resort to various methods to include diagnostic information about the network segment, datacentre location or other details pertaining to their infrastructure in NTP responses with the NTP reference identifier most commonly being used.
 
 # The Server Identifier Extension Field
 
-The server identifier extension field is a free-form field which comprises of
-an identifier, length which describes the length of the server identifier field.
-The server idenfier field contains no structure and is assumed to be unicode
-text containing information about the service.
+The server identifier extension field is a free-form field which comprises of an identifier, length which describes the length of the server identifier field. The server idenfier field contains no structure and is assumed to be unicode text containing information about the service.
 
 ~~~
  0                   1                   2                   3
@@ -83,14 +74,11 @@ TODO: Describe how implementations and operators should use the field.
 
 # Security Considerations
 
-Operators should remember that NTP packets are not confidential, and that
-revealing this information to clients may expose sensitive details about their
-network, services and their configuration.
+Operators should remember that NTP packets are not confidential, and that revealing this information to clients may expose sensitive details about their network, services and their configuration.
 
 # IANA Considerations
 
-IANA is requested to allocate the following entries in the NTP Extension Field
-Types registry {{RFC5905}}:
+IANA is requested to allocate the following entries in the NTP Extension Field Types registry {{RFC5905}}:
 
 Field Type | Meaning           | Reference
 -----------|-------------------|-----------------
