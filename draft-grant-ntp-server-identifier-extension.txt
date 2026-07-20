@@ -123,8 +123,8 @@ Table of Contents
       *0xf101*.
 
    Length:  Length of the Server Identifier field.  In requests its
-      value MUST be zero, in responses it should be the true length of
-      the server identifier field.
+      value MUST be 4 as the Server Identifier is not sent, in responses
+      it should be the true length of the server identifier field.
 
    Server Identifier:  A Unicode string containing information about the
       server.  In requests, this field MUST be empty.  In responses
