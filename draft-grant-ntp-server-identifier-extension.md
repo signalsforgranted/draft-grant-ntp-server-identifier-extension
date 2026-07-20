@@ -101,4 +101,4 @@ Field Type | Meaning           | Reference
 # Acknowledgments
 {:numbered="false"}
 
-The authors would like to acknowledge Marco Davids, Miroslav Lichvar, and Ruben Nijveld for providing thoughtful discussion and inspiration for this document.
+The authors would like to acknowledge Marco Davids, Miroslav Lichvar, Giovane Moura, and Ruben Nijveld for providing thoughtful discussion and inspiration for this document.
