@@ -74,7 +74,7 @@ Field Type:
 
 Length:
 
-: Length of the Server Identifier field. In requests its value MUST be zero, in responses it should be the true length of the server identifier field.
+: Length of the Server Identifier field. In requests its value MUST be 4 as the Server Identifier is not sent, in responses it should be the true length of the server identifier field.
 
 Server Identifier:
 
