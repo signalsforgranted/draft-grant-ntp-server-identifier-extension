@@ -59,7 +59,7 @@ The Server Identifier field contains the following structure:
  0                   1                   2                   3
  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|       Type = TBD              |             Length            |
+|       Type = TBD              |    Length     |   Reserved    |
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 .                                                               .
 .                      Server Identifier                        .
@@ -74,11 +74,15 @@ Field Type:
 
 Length:
 
-: Length of the Server Identifier field. In requests its value MUST be 4 as the Server Identifier is not sent, in responses it should be the true length of the server identifier field.
+: Length of the Server Identifier field. The length is in octets expressed as an unsigned 8-bit integer and it includes the header itself.
+
+Reserved:
+
+: 8 bits reserved. It should be always set to zero.
 
 Server Identifier:
 
-: A Unicode string containing information about the server. In requests, this field MUST be empty. In responses padding is not required.
+: A Unicode string containing information about the server. In requests, this field MUST be empty. In responses with NTP version 4 {{RFC5905}} the length of the identifier must be divisible by 4.
 
 ## Use of the Server Identifier Extension Field
 
@@ -87,6 +91,8 @@ TODO: Describe how implementations and operators should use the field.
 # Security Considerations
 
 Operators should note that NTP packets are not confidential and that revealing this information to clients may expose sensitive details about their network, services, or their configuration. Deployments not wishing to expose this data to clients should be configured to filter or ignore this extension on non-monitoring interfaces.
+
+TODO: discuss data minimisation to reduce amplification and asymmetry.
 
 # IANA Considerations
 
