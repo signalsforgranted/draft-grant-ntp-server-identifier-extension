@@ -1187,7 +1187,7 @@ svg {
       <h2 id="name-introduction">
 <a href="#section-1" class="section-number selfRef">1. </a><a href="#name-introduction" class="section-name selfRef">Introduction</a>
       </h2>
-<p id="section-1-1">Operators of NTP services may choose to have system architectures which result in multiple servers responding for the same IP Address. This is particularly notable in the case of deployments which use load balancing of UDP traffic, or the use of anycast IP addresses. In such situations, the server operator may want to provide an indication which actual server responded to a request. This information can be useful in identifying infrastructure, providing ongoing monitoring and assist in triaging faults or issues with services.<a href="#section-1-1" class="pilcrow">¶</a></p>
+<p id="section-1-1">Operators of NTP services may choose to have system architectures which result in multiple servers responding for the same IP address. This is particularly notable in the case of deployments which use load balancing of UDP traffic, or the use of anycast IP addresses. In such situations, the server operator may want to provide an indication which actual server responded to a request. This information can be useful in identifying infrastructure, providing ongoing monitoring and assist in triaging faults or issues with services.<a href="#section-1-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="conventions-and-definitions">
@@ -1242,7 +1242,7 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
         <dd class="break"></dd>
 <dt id="section-4-3.3">Length:</dt>
         <dd style="margin-left: 1.5em" id="section-4-3.4">
-          <p id="section-4-3.4.1">Length of the Server Identifier field. The length is in octets expressed as an unsigned 16-bit integer and it includes the header itself. Implementations <span class="bcp14">SHALL</span> keep the length of this extension field at les than 256 bytes.<a href="#section-4-3.4.1" class="pilcrow">¶</a></p>
+          <p id="section-4-3.4.1">Length of the Server Identifier field. The length is in octets expressed as an unsigned 16-bit integer and it includes the header itself. Implementations <span class="bcp14">SHALL</span> keep the length of this extension field at less than 256 bytes.<a href="#section-4-3.4.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
 <dt id="section-4-3.5">Server Identifier:</dt>
@@ -1257,7 +1257,7 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
 <a href="#section-4.1" class="section-number selfRef">4.1. </a><a href="#name-use-of-the-server-identifie" class="section-name selfRef">Use of the Server Identifier Extension Field</a>
         </h3>
 <p id="section-4.1-1">To request the server identifier of a server, a client includes in its request a Server Identifier Extension Field. This extension field shall be sent with a zeroed out server-identifier field, of length sufficient that the client expects the servers identifier to fit within the length of the server identifier field in its request.<a href="#section-4.1-1" class="pilcrow">¶</a></p>
-<p id="section-4.1-2">On receiving a Server Identifier Extension Field a server <span class="bcp14">MAY</span> choose to send its server identifier in the response. If it chooses to do so, it shall include a Server Identifier Extension Field in the response. The length of this Extension field <span class="bcp14">SHALL</span> be at most the length of the Server Identifier Extension Field in the request. If the servers identifier doesn't fit within the length requested by the client, the server <span class="bcp14">SHALL</span> truncate the identifier, providing as many bytes of it as fit within the space chosen in the request. If the identifier is shorter than the length of Server Identifier field in the Server Identifier Extension Field, the server <span class="bcp14">MAY</span> choose to pad the identifier with zeroes to make the lenght of the request and response identifical.<a href="#section-4.1-2" class="pilcrow">¶</a></p>
+<p id="section-4.1-2">On receiving a Server Identifier Extension Field a server <span class="bcp14">MAY</span> choose to send its server identifier in the response. If it chooses to do so, it shall include a Server Identifier Extension Field in the response. The length of this Extension field <span class="bcp14">SHALL</span> be at most the length of the Server Identifier Extension Field in the request. If the server's identifier doesn't fit within the length requested by the client, the server <span class="bcp14">SHALL</span> truncate the identifier, providing as many bytes of it as fit within the space chosen in the request. If the identifier is shorter than the length of Server Identifier field in the Server Identifier Extension Field, the server <span class="bcp14">MAY</span> choose to pad the identifier with zeroes to make the length of the request and response identical.<a href="#section-4.1-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>

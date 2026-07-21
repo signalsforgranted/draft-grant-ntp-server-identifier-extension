@@ -81,7 +81,7 @@ Table of Contents
 1.  Introduction
 
    Operators of NTP services may choose to have system architectures
-   which result in multiple servers responding for the same IP Address.
+   which result in multiple servers responding for the same IP address.
    This is particularly notable in the case of deployments which use
    load balancing of UDP traffic, or the use of anycast IP addresses.
    In such situations, the server operator may want to provide an
@@ -130,7 +130,7 @@ Table of Contents
    Length:  Length of the Server Identifier field.  The length is in
       octets expressed as an unsigned 16-bit integer and it includes the
       header itself.  Implementations SHALL keep the length of this
-      extension field at les than 256 bytes.
+      extension field at less than 256 bytes.
 
    Server Identifier:  A Unicode string containing information about the
       server.  In requests, this field shall be filled with zeroes.  The
@@ -152,13 +152,13 @@ Table of Contents
    so, it shall include a Server Identifier Extension Field in the
    response.  The length of this Extension field SHALL be at most the
    length of the Server Identifier Extension Field in the request.  If
-   the servers identifier doesn't fit within the length requested by the
-   client, the server SHALL truncate the identifier, providing as many
-   bytes of it as fit within the space chosen in the request.  If the
-   identifier is shorter than the length of Server Identifier field in
-   the Server Identifier Extension Field, the server MAY choose to pad
-   the identifier with zeroes to make the lenght of the request and
-   response identifical.
+   the server's identifier doesn't fit within the length requested by
+   the client, the server SHALL truncate the identifier, providing as
+   many bytes of it as fit within the space chosen in the request.  If
+   the identifier is shorter than the length of Server Identifier field
+   in the Server Identifier Extension Field, the server MAY choose to
+   pad the identifier with zeroes to make the length of the request and
+   response identical.
 
 5.  Security Considerations
 
