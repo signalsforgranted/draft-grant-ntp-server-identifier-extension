@@ -82,7 +82,9 @@ Server Identifier:
 
 ## Use of the Server Identifier Extension Field
 
-TODO: Describe how implementations and operators should use the field.
+To request the server identifier of a server, a client includes in its request a Server Identifier Extension Field. This extension field shall be sent with a zeroed out server-identifier field, of length sufficient that the client expects the servers identifier to fit within the length of the server identifier field in its request.
+
+On receiving a Server Identifier Extension Field a server MAY choose to send its server identifier in the response. If it chooses to do so, it shall include a Server Identifier Extension Field in the response. The length of this Extension field SHALL be at most the length of the Server Identifier Extension Field in the request. If the servers identifier doesn't fit within the length requested by the client, the server SHALL truncate the identifier, providing as many bytes of it as fit within the space chosen in the request. If the identifier is shorter than the length of Server Identifier field in the Server Identifier Extension Field, the server MAY choose to pad the identifier with zeroes to make the lenght of the request and response identifical.
 
 # Security Considerations
 
