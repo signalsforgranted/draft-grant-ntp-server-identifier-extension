@@ -41,7 +41,7 @@ This document defines an extension field that allows operators of NTP services t
 
 # Introduction
 
-Operators of NTP services may choose to have system architectures which lead. This is particularly notable in the case of deployments which use load balancing of UDP traffic, or the use of anycast IP addresses. This information can be useful in identifying infrastructure, providing ongoing monitoring and assist in triaging faults or issues with services.
+Operators of NTP services may choose to have system architectures which result in multiple servers responding for the same IP Address. This is particularly notable in the case of deployments which use load balancing of UDP traffic, or the use of anycast IP addresses. In such situations, the server operator may want to provide an indication which actual server responded to a request. This information can be useful in identifying infrastructure, providing ongoing monitoring and assist in triaging faults or issues with services.
 
 # Conventions and Definitions
 
