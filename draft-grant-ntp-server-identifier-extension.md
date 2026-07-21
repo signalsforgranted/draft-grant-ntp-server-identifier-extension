@@ -53,13 +53,13 @@ Many operators use various methods to include diagnostic information about the n
 
 # The Server Identifier Extension Field
 
-The Server Identifier field contains the following structure:
+The Server Identifier field contains the following structure, based on the general structure of an NTP extension field defined in {{RFC5905}}:
 
 ~~~
  0                   1                   2                   3
  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|       Type = TBD              |    Length     |   Reserved    |
+|       Type = TBD              |             Length            |
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 .                                                               .
 .                      Server Identifier                        .
@@ -70,19 +70,15 @@ The Server Identifier field contains the following structure:
 
 Field Type:
 
-: The type which identifies the Server Identifier extension field. For this draft, this value should be set to **0xf101**.
+: The type which identifies the Server Identifier extension field. To be determined by IANA. (Draft implementations: **0xf101**)
 
 Length:
 
-: Length of the Server Identifier field. The length is in octets expressed as an unsigned 8-bit integer and it includes the header itself.
-
-Reserved:
-
-: 8 bits reserved. It should be always set to zero.
+: Length of the Server Identifier field. The length is in octets expressed as an unsigned 16-bit integer and it includes the header itself. Implementations SHALL keep the length of this extension field at les than 256 bytes.
 
 Server Identifier:
 
-: A Unicode string containing information about the server. In requests, this field MUST be empty. In responses with NTP version 4 {{RFC5905}} the length of the identifier must be divisible by 4.
+: A Unicode string containing information about the server. In requests, this field shall be filled with zeroes. The length of this field SHALL be chosen such that the length requirements on extension fields from the NTP version in use are satisfied. If doing this requires padding of the string, the sender shall use zeroes to pad this field to the required length.
 
 ## Use of the Server Identifier Extension Field
 
