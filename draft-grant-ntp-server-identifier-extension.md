@@ -41,7 +41,7 @@ This document defines an extension field that allows operators of NTP services t
 
 # Introduction
 
-Operators of NTP services may choose to have system architectures which lead. This is particularly notable in the case of deployments which use load balancing of UDP traffic, or the use of anycast IP addresses. This information can be useful in identifying infrastructure, providing ongoing monitoring and assist in triaging faults or issues with services.
+Operators of NTP services may choose to have system architectures which result in multiple servers responding for the same IP Address. This is particularly notable in the case of deployments which use load balancing of UDP traffic, or the use of anycast IP addresses. In such situations, the server operator may want to provide an indication which actual server responded to a request. This information can be useful in identifying infrastructure, providing ongoing monitoring and assist in triaging faults or issues with services.
 
 # Conventions and Definitions
 
@@ -53,13 +53,13 @@ Many operators use various methods to include diagnostic information about the n
 
 # The Server Identifier Extension Field
 
-The Server Identifier field contains the following structure:
+The Server Identifier field contains the following structure, based on the general structure of an NTP extension field defined in {{RFC5905}}:
 
 ~~~
  0                   1                   2                   3
  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|       Type = TBD              |    Length     |   Reserved    |
+|       Type = TBD              |             Length            |
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 .                                                               .
 .                      Server Identifier                        .
@@ -70,23 +70,21 @@ The Server Identifier field contains the following structure:
 
 Field Type:
 
-: The type which identifies the Server Identifier extension field. For this draft, this value should be set to **0xf101**.
+: The type which identifies the Server Identifier extension field. To be determined by IANA. (Draft implementations: **0xf101**)
 
 Length:
 
-: Length of the Server Identifier field. The length is in octets expressed as an unsigned 8-bit integer and it includes the header itself.
-
-Reserved:
-
-: 8 bits reserved. It should be always set to zero.
+: Length of the Server Identifier field. The length is in octets expressed as an unsigned 16-bit integer and it includes the header itself. Implementations SHALL keep the length of this extension field at les than 256 bytes.
 
 Server Identifier:
 
-: A Unicode string containing information about the server. In requests, this field MUST be empty. In responses with NTP version 4 {{RFC5905}} the length of the identifier must be divisible by 4.
+: A Unicode string containing information about the server. In requests, this field shall be filled with zeroes. The length of this field SHALL be chosen such that the length requirements on extension fields from the NTP version in use are satisfied. If doing this requires padding of the string, the sender shall use zeroes to pad this field to the required length.
 
 ## Use of the Server Identifier Extension Field
 
-TODO: Describe how implementations and operators should use the field.
+To request the server identifier of a server, a client includes in its request a Server Identifier Extension Field. This extension field shall be sent with a zeroed out server-identifier field, of length sufficient that the client expects the servers identifier to fit within the length of the server identifier field in its request.
+
+On receiving a Server Identifier Extension Field a server MAY choose to send its server identifier in the response. If it chooses to do so, it shall include a Server Identifier Extension Field in the response. The length of this Extension field SHALL be at most the length of the Server Identifier Extension Field in the request. If the servers identifier doesn't fit within the length requested by the client, the server SHALL truncate the identifier, providing as many bytes of it as fit within the space chosen in the request. If the identifier is shorter than the length of Server Identifier field in the Server Identifier Extension Field, the server MAY choose to pad the identifier with zeroes to make the lenght of the request and response identifical.
 
 # Security Considerations
 
