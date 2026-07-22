@@ -80,7 +80,7 @@ Server Identifier:
 
 : A Unicode string containing information about the server. In requests, this field shall be filled with zeroes. The length of this field SHALL be chosen such that the length requirements on extension fields from the NTP version in use are satisfied. If doing this requires padding of the string, the sender shall use zeroes to pad this field to the required length.
 
-## Use of the Server Identifier Extension Field
+## Use of the Server Identifier Extension Field {#use}
 
 To request the server identifier of a server, a client includes in its request a Server Identifier Extension Field. This extension field shall be sent with a zeroed out server-identifier field, of length sufficient that the client expects the servers identifier to fit within the length of the server identifier field in its request.
 
@@ -90,7 +90,7 @@ On receiving a Server Identifier Extension Field a server MAY choose to send its
 
 Operators should note that NTP packets are not confidential and that revealing this information to clients may expose sensitive details about their network, services, or their configuration. Deployments not wishing to expose this data to clients should be configured to filter or ignore this extension on non-monitoring interfaces.
 
-TODO: discuss data minimisation to reduce amplification and asymmetry.
+There is a risk of amplification with this extension field if servers blindly respond with the full server identifier on any request. To avoid this risk, it is important servers stick closely to the guidance provided in section {{use}}.
 
 # IANA Considerations
 
