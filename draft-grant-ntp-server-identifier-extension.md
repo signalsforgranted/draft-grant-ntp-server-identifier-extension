@@ -35,7 +35,7 @@ informative:
 
 --- abstract
 
-This document defines an extension field that allows operators of NTP services the ability to provide additional information about their services to clients which request it.
+This document defines an extension field that allows operators of NTP services the ability to provide additional information about their servers to clients which request it.
 
 --- middle
 
@@ -78,7 +78,7 @@ Length:
 
 Server Identifier:
 
-: A Unicode string containing information about the server. In requests, this field shall be filled with zeroes. The length of this field SHALL be chosen such that the length requirements on extension fields from the NTP version in use are satisfied. If doing this requires padding of the string, the sender shall use zeroes to pad this field to the required length.
+: A UTF8 encoded Unicode string containing information about the server. In requests, this field shall be filled with zeroes. The length of this field SHALL be chosen such that the length requirements on extension fields from the NTP version in use are satisfied. If doing this requires padding of the string, the sender shall use zeroes to pad this field to the required length.
 
 ## Use of the Server Identifier Extension Field
 
