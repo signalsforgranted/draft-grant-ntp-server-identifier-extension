@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-07-21T01:43:09.501621+00:00",
+  "timestamp": "2026-07-23T01:49:40.046341+00:00",
   "repo": "signalsforgranted/draft-grant-ntp-server-identifier-extension",
   "labels": [
     {
@@ -50,5 +50,118 @@
     }
   ],
   "issues": [],
-  "pulls": []
+  "pulls": [
+    {
+      "number": 1,
+      "id": "PR_kwDOTcpG2s70PaXp",
+      "title": "Various smaller suggestions to improve the draft text",
+      "url": "https://github.com/signalsforgranted/draft-grant-ntp-server-identifier-extension/pull/1",
+      "state": "MERGED",
+      "author": "davidv1992",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Provides some tighting around the actual definition of the extension field, keeping it in line with RFC5905 and the NTPv5 draft whilst keeping existing restrictions in place.\r\n\r\nProvides text on how th eserver identifier field works in a request-response flow.\r\n\r\nImproves the text flow in the introduction.",
+      "createdAt": "2026-07-21T07:59:55Z",
+      "updatedAt": "2026-07-21T08:05:22Z",
+      "baseRepository": "signalsforgranted/draft-grant-ntp-server-identifier-extension",
+      "baseRefName": "main",
+      "baseRefOid": "eccd0362ddcb2c73e56f29f7323f075d72b5b555",
+      "headRepository": "davidv1992/draft-grant-ntp-server-identifier-extension",
+      "headRefName": "tihgten-layout-spec",
+      "headRefOid": "e8eb0fc5e934b362554ac9d7e3423b04c9694e0f",
+      "closedAt": "2026-07-21T08:05:22Z",
+      "mergedAt": "2026-07-21T08:05:22Z",
+      "mergedBy": "signalsforgranted",
+      "mergeCommit": {
+        "oid": "3da51423d1c5ce4ace9b82aca33ca99e599e7075"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOTcpG2s8AAAABGq0Ekw",
+          "commit": {
+            "abbreviatedOid": "e8eb0fc"
+          },
+          "author": "signalsforgranted",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-07-21T08:05:09Z",
+          "updatedAt": "2026-07-21T08:05:09Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "id": "PR_kwDOTcpG2s70u6Hu",
+      "title": "Provide security considerations around amplification",
+      "url": "https://github.com/signalsforgranted/draft-grant-ntp-server-identifier-extension/pull/2",
+      "state": "MERGED",
+      "author": "davidv1992",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Removes the final TODO in the document.",
+      "createdAt": "2026-07-22T07:02:05Z",
+      "updatedAt": "2026-07-22T07:06:34Z",
+      "baseRepository": "signalsforgranted/draft-grant-ntp-server-identifier-extension",
+      "baseRefName": "main",
+      "baseRefOid": "fee38b96af2018d0732bdbf2b837a6a104934008",
+      "headRepository": "signalsforgranted/draft-grant-ntp-server-identifier-extension",
+      "headRefName": "amplification-security-considerations",
+      "headRefOid": "066eb31a6270c6abb19182c39486cd67a4838200",
+      "closedAt": "2026-07-22T07:06:19Z",
+      "mergedAt": "2026-07-22T07:06:19Z",
+      "mergedBy": "signalsforgranted",
+      "mergeCommit": {
+        "oid": "96e7f78c6adce26fa81a7afe9d908448d02ffd9d"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOTcpG2s8AAAABGzufQA",
+          "commit": {
+            "abbreviatedOid": "066eb31"
+          },
+          "author": "garagewasbeer",
+          "authorAssociation": "NONE",
+          "state": "CHANGES_REQUESTED",
+          "body": "Thanks!",
+          "createdAt": "2026-07-22T07:05:18Z",
+          "updatedAt": "2026-07-22T07:05:55Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "id": "PR_kwDOTcpG2s70vkzO",
+      "title": "Minor textual improvements",
+      "url": "https://github.com/signalsforgranted/draft-grant-ntp-server-identifier-extension/pull/3",
+      "state": "MERGED",
+      "author": "davidv1992",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Two minor wording changes to clarify the document further.",
+      "createdAt": "2026-07-22T07:30:41Z",
+      "updatedAt": "2026-07-22T07:32:25Z",
+      "baseRepository": "signalsforgranted/draft-grant-ntp-server-identifier-extension",
+      "baseRefName": "main",
+      "baseRefOid": "96e7f78c6adce26fa81a7afe9d908448d02ffd9d",
+      "headRepository": "signalsforgranted/draft-grant-ntp-server-identifier-extension",
+      "headRefName": "minor-text-changes",
+      "headRefOid": "46bd59b37c36931cb3156688997275b565c09c4c",
+      "closedAt": "2026-07-22T07:32:20Z",
+      "mergedAt": "2026-07-22T07:32:20Z",
+      "mergedBy": "signalsforgranted",
+      "mergeCommit": {
+        "oid": "308d985461dae34d441d64a4476eb8154e7c3f36"
+      },
+      "comments": [],
+      "reviews": []
+    }
+  ]
 }
