@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-07-26T01:48:19.603176+00:00",
+  "timestamp": "2026-07-28T01:29:34.755153+00:00",
   "repo": "signalsforgranted/draft-grant-ntp-server-identifier-extension",
   "labels": [
     {
@@ -49,7 +49,24 @@
       "color": "ffffff"
     }
   ],
-  "issues": [],
+  "issues": [
+    {
+      "number": 4,
+      "id": "I_kwDOTcpG2s8AAAABKNzlPg",
+      "title": "Length of field",
+      "url": "https://github.com/signalsforgranted/draft-grant-ntp-server-identifier-extension/issues/4",
+      "state": "OPEN",
+      "author": "signalsforgranted",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "The length of the field is required to be known by receiver, has to be long enough to get information in, but short enough as to need mitigations against potential asymmetry in packet size. To work with NTPv4 correctly, the length must be padd-able to nearest 4 bytes, something not required by version 5.\n\n* Reference ID is 4 bytes currently.\n* Current size in the document is 256 bytes.\n* [Danny suggested](https://mailarchive.ietf.org/arch/msg/ntp/VxG4zMzbsDSjeNVgvTvoD3AxVXE/) 8 bytes.\n* [Ask suggested](https://mailarchive.ietf.org/arch/msg/ntp/f5fDWtt-0fKBHGYU6N6xi7ABPP8/) a fixed length:\n\n> I'd go with something between 32 and 64 bytes. Either one holds what an operator will realistically use: an opaque identifier[1] or a name for the site and node. With 48 or 64 you can have both.\n> \n> I'd also make it a fixed size field, zero padded, carried at the same size in the request. Request and response are then always the same size, so there's no amplification to argue about, nothing to truncate, and no length byte. Both sizes are a multiple of 4 with the header, so the NTPv4 restrictions are fine too.\n\n* [Hal suggested](https://mailarchive.ietf.org/arch/msg/ntp/MGYquDvEamU6RGZ-lfDX2FhUayU/) instead to use the first byte is a means of signalling length, however this seems more complicated than a fixed size approach.\n",
+      "createdAt": "2026-07-26T12:24:10Z",
+      "updatedAt": "2026-07-26T12:24:10Z",
+      "closedAt": null,
+      "comments": []
+    }
+  ],
   "pulls": [
     {
       "number": 1,
