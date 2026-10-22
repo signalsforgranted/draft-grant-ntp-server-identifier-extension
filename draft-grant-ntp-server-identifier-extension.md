@@ -35,13 +35,13 @@ informative:
 
 --- abstract
 
-This document defines an extension field that allows operators of NTP services the ability to provide additional information about their servers to clients which request it.
+This document defines an extension field that gives operators of NTP services the ability to provide additional information about their servers to clients which request it.
 
 --- middle
 
 # Introduction
 
-Operators of NTP services may choose to have system architectures which result in multiple servers responding for the same IP address. This is particularly notable in the case of deployments which use load balancing of UDP traffic, or the use of anycast IP addresses. In such situations, the server operator may want to provide an indication which actual server responded to a request. This information can be useful in identifying infrastructure, providing ongoing monitoring and assist in triaging faults or issues with services.
+Operators of NTP services may choose to have system architectures which result in multiple servers responding for the same IP address. This is particularly notable in the case of deployments which use load balancing of UDP traffic, or the use of anycast IP addresses. In such situations, the server operator may want to provide an indication which actual server responded to a request. This information can be useful in identifying infrastructure, providing ongoing monitoring, and assisting in triaging faults or issues with services.
 
 # Conventions and Definitions
 
@@ -74,23 +74,23 @@ Field Type:
 
 Length:
 
-: Length of the Server Identifier field. The length is in octets expressed as an unsigned 16-bit integer and it includes the header itself. Implementations SHALL keep the length of this extension field at less than 64 bytes.
+: Length of the Server Identifier field. The length is in octets expressed as an unsigned 16-bit integer and it includes the header itself. Implementations SHALL keep the length of this extension field at less than 64 octets.
 
 Server Identifier:
 
-: A UTF-8 encoded Unicode string containing information about the server. In requests, this field shall be filled with zeroes. The length of this field should be chosen such that the length requirements on extension fields from the NTP version in use are satisfied. If the string is shorter than the field, the sender SHALL pad the remainder of the field with zeroes. The identifier ends at the first zero octet or at the end of the field, whichever comes first; receivers MUST ignore any octets following the first zero octet.
+: A UTF-8 encoded Unicode string containing information about the server. In requests, this field shall be filled with zeroes. The length of this field should be chosen such that the length requirements on extension fields from the NTP version in use are satisfied. If the string is shorter than the field, the sender SHALL pad the remainder of the field with zeroes. The identifier ends at the first zero octet or at the end of the field, whichever comes first.
 
 ## Use of the Server Identifier Extension Field {#use}
 
-To request the server identifier of a server, a client includes in its request a Server Identifier Extension Field. This extension field shall be sent with a zeroed out server-identifier field, of length sufficient that the client expects the servers identifier to fit within the length of the server's identifier field in its request.
+To request the server identifier, a client includes a Server Identifier Extension Field in its request, long enough to hold the identifier it expects. Clients wishing to reliably receive the identifier should use the maximum permitted length.
 
-On receiving a Server Identifier Extension Field a server MAY choose to send its server identifier in the response. If it chooses to do so, it shall include a Server Identifier Extension Field in the response. The length of this Extension field SHALL be identical to the length of the Server Identifier Extension Field in the request. If the server's identifier doesn't fit within the length requested by the client to the longest prefix that fits and that ends on a UTF-8 character boundary. If the identifier is shorter than the field, the server SHALL pad with zeroes.
+On receiving a Server Identifier Extension Field, a server MAY choose to send its server identifier in the response of matching length to the one in the request. If the server's identifier doesn't fit within that length, the server should not include the extension field in its response.
 
 # Security Considerations
 
 Operators should note that NTP packets are not confidential and that revealing this information to clients may expose sensitive details about their network, services, or their configuration. Deployments not wishing to expose this data to clients should be configured to filter or ignore this extension on non-monitoring interfaces.
 
-As the extension field in a response is always the same length as the corrosponding request ({{use}}), this extension does not expose an amplification risk to the use of NTP, provided that servers MUST NOT respond with a field longer than the one sent in a given request.
+As the extension field in a response is never bigger than the one in the corresponding request ({{use}}), this extension cannot increase the DDoS amplification risk of NTP.
 
 The identifier sent in responses doesn't depend on the requested length, so varying the request length discloses no additional information. Operators concerned about enumeration of servers should consider limiting the extension to trusted clients.
 
