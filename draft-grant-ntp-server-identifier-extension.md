@@ -53,7 +53,7 @@ Many operators use various methods to include diagnostic information about the n
 
 # The Server Identifier Extension Field
 
-The Server Identifier field contains the following structure, based on the general structure of an NTP extension field defined in {{RFC5905}}:
+The Server Identifier Extension Field contains the following structure, based on the general structure of an NTP extension field defined in {{RFC5905}}:
 
 ~~~
  0                   1                   2                   3
@@ -70,11 +70,11 @@ The Server Identifier field contains the following structure, based on the gener
 
 Field Type:
 
-: The type which identifies the Server Identifier extension field. To be determined by IANA. (Draft implementations: **0xf101**)
+: The type which identifies the Server Identifier Extension Field. To be determined by IANA. (Draft implementations: **0xf101**)
 
 Length:
 
-: Length of the Server Identifier field. The length is in octets expressed as an unsigned 16-bit integer and it includes the header itself. Implementations SHALL keep the length of this extension field at less than 64 octets.
+: Length of the Server Identifier Extension Field. The length is in octets expressed as an unsigned 16-bit integer and it includes the header itself. Implementations SHALL keep the length of this extension field at less than 64 octets.
 
 Server Identifier:
 
@@ -84,7 +84,7 @@ Server Identifier:
 
 To request the server identifier, a client includes a Server Identifier Extension Field in its request, long enough to hold the identifier it expects. Clients wishing to reliably receive the identifier should use the maximum permitted length.
 
-On receiving a Server Identifier Extension Field, a server MAY choose to send its server identifier in the response of matching length to the one in the request. If the server's identifier doesn't fit within that length, the server should not include the extension field in its response.
+On receiving a Server Identifier Extension Field, a server MAY choose to send its server identifier in a Server Identifier Extension Field with matching length to the one in the request. If the server's identifier doesn't fit within that length, the server should not include the extension field in its response.
 
 # Security Considerations
 
